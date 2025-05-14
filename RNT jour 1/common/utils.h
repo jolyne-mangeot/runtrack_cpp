@@ -5,9 +5,10 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <iostream>
-#include <memory>
 #include "aquatic.h"
 #include "terrestrial.h"
+
+using namespace Penguin_friend;
+using namespace std;
 
 #endif //UTILS_H

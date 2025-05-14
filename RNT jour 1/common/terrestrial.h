@@ -5,12 +5,24 @@
 #ifndef TERRESTRIAL_H
 #define TERRESTRIAL_H
 
-namespace Penguin {
+#include <iostream>
+#include <iomanip>
+#include <memory>
 
-class Terrestrial {
+using namespace std;
 
-};
+namespace Penguin_friend {
 
-} // Penguin
+    class Terrestrial {
+
+    protected:
+        int walk_speed = 0;
+
+    public:
+        Terrestrial(int speed);
+        virtual void walk();
+    };
+
+} // Penguin_friend
 
 #endif //TERRESTRIAL_H

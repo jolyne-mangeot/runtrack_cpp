@@ -4,5 +4,14 @@
 
 #include "aquatic.h"
 
-namespace Penguin {
-} // Penguin
+namespace Penguin_friend {
+
+    Aquatic::Aquatic(int speed) {
+        swim_speed = speed;
+    }
+
+    void Aquatic::swim() {
+        cout << "Je nage pendant 5 secondes sur " << swim_speed * 5 << " metres." << endl;
+    }
+
+} // Penguin_friend

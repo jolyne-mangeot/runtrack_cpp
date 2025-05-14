@@ -4,5 +4,14 @@
 
 #include "terrestrial.h"
 
-namespace Penguin {
-} // Penguin
+namespace Penguin_friend {
+
+    Terrestrial::Terrestrial(int speed) {
+        walk_speed = speed;
+    }
+
+    void Terrestrial::walk() {
+        cout << "Je marche pendant 5 secondes sur " << walk_speed * 5 << " metres" << endl;
+    }
+
+} // Penguin_friend

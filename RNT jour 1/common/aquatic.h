@@ -5,12 +5,24 @@
 #ifndef AQUATIC_H
 #define AQUATIC_H
 
-namespace Penguin {
+#include <iostream>
+#include <iomanip>
+#include <memory>
 
-class Aquatic {
+using namespace std;
 
-};
+namespace Penguin_friend {
 
-} // Penguin
+    class Aquatic {
+
+    protected:
+        int swim_speed = 0;
+
+    public:
+        Aquatic(int speed);
+        virtual void swim();
+    };
+
+} // Penguin_friend
 
 #endif //AQUATIC_H
