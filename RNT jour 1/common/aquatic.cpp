@@ -6,11 +6,10 @@
 
 namespace Penguin_friend {
 
-    Aquatic::Aquatic(int speed) {
-        swim_speed = speed;
-    }
+    Aquatic::Aquatic(const double speed)
+        : swim_speed(speed){}
 
-    void Aquatic::swim() {
+    void Aquatic::swim() const {
         cout << "Je nage pendant 5 secondes sur " << swim_speed * 5 << " metres." << endl;
     }
 

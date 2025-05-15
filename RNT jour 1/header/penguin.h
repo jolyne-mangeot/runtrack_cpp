@@ -5,31 +5,33 @@
 #ifndef PENGUIN_H
 #define PENGUIN_H
 
-#include <string.h>
-
-#include "aquatic.h"
-#include "terrestrial.h"
+#include "utils.h"
 
 namespace Penguin_friend {
 
-    class Penguin : public Aquatic, public Terrestrial {
+    class Penguin final : public Aquatic, public Terrestrial {
     protected:
-        char name[20];
+        string name;
         int slide_speed;
 
     public:
-        Penguin(int swim_speed, int walk_speed, char name[20]):
+        static vector<shared_ptr<Penguin>> penguins;
+
+        Penguin(const int swim_speed, const int walk_speed, string name):
             Aquatic(swim_speed),
-            Terrestrial(walk_speed) {
-            strcpy(this->name, name);
-        };
-        Penguin(Penguin &other_penguin): Aquatic(other_penguin), Terrestrial(other_penguin){
-            strcpy(this->name, other_penguin.name);
-        }
+            Terrestrial(walk_speed), name(move(name)){};
+
+        Penguin(const Penguin &other_penguin):
+        Aquatic(other_penguin),
+        Terrestrial(other_penguin), name(move(name)) {};
+
+        ~Penguin() = default;
+
         void share_name() const;
-        void set_slide_speed(int slide_speed);
-        void swim() override;
-        void walk() override;
+        string get_name() const;
+        void set_slide_speed(double slide_speed);
+        void swim() const override;
+        void walk() const override;
     };
 
 } // Penguin_friend

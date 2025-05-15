@@ -6,8 +6,6 @@
 #define TERRESTRIAL_H
 
 #include <iostream>
-#include <iomanip>
-#include <memory>
 
 using namespace std;
 
@@ -16,11 +14,13 @@ namespace Penguin_friend {
     class Terrestrial {
 
     protected:
-        int walk_speed = 0;
+        double walk_speed = 0;
 
     public:
-        Terrestrial(int speed);
-        virtual void walk();
+        explicit Terrestrial(double speed);
+        virtual void walk() const;
+        virtual ~Terrestrial() = default; // This destructor will be called and won't be overridden
+        // by the class children thanks to the virtual type
     };
 
 } // Penguin_friend

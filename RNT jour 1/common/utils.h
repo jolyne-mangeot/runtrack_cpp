@@ -5,6 +5,9 @@
 #ifndef UTILS_H
 #define UTILS_H
 
+#include <vector>
+#include <string.h>
+#include <memory>
 #include "aquatic.h"
 #include "terrestrial.h"
 

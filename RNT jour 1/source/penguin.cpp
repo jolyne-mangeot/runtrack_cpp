@@ -9,13 +9,18 @@ namespace Penguin_friend {
     void Penguin::share_name() const {
         cout << "Bonjour ! Je m'appelle " << name << endl;
     }
-    void Penguin::set_slide_speed(int slide_speed) {
+    string Penguin::get_name() const {
+        return this->name;
+    }
+
+    void Penguin::set_slide_speed(const double slide_speed) {
         this->slide_speed = slide_speed;
     }
-    void Penguin::swim() {
+
+    void Penguin::swim() const {
         cout << "Je nage pendant 10 secondes sur " << swim_speed * 10 << " metres." << endl;
     }
-    void Penguin::walk() {
+    void Penguin::walk() const {
         cout << "Je marche pendant 10 secondes sur " << walk_speed * 10 << " metres" << endl;
     }
 
