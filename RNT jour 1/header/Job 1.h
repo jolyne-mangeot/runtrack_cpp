@@ -9,7 +9,8 @@
 #include "penguin.h"
 
 int main();
-void add_penguin(int swim_speed, int walk_speed, char name[10]);
+void add_penguin(int swim_speed, int walk_speed, string name);
+void remove_penguins();
 
 #endif //JOB_1_H
 

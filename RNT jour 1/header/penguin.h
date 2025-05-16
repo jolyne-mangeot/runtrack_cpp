@@ -13,6 +13,7 @@ namespace Penguin_friend {
     protected:
         string name;
         int slide_speed;
+        vector<double> olympic_time;
 
     public:
         static vector<shared_ptr<Penguin>> penguins;
@@ -29,9 +30,15 @@ namespace Penguin_friend {
 
         void share_name() const;
         string get_name() const;
-        void set_slide_speed(double slide_speed);
-        void swim() const override;
-        void walk() const override;
+
+        void set_slide_speed(int slide_speed);
+
+        double swim(double distance) const;
+        double walk(double distance) const;
+        double slide(double distance) const;
+
+        void olympic_run();
+        static void olympic_results();
     };
 
 } // Penguin_friend
